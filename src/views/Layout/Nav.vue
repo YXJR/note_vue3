@@ -17,24 +17,19 @@
 </template>
 
 <script>
-import { getCurrentInstance } from "vue"
 import useMenuStore from "../../store/index"
 import { useRouter } from "vue-router"
-import { getSidebar } from "../../util/index"
 export default {
 
   setup () {
 
-    const routes = JSON.parse(JSON.stringify(useMenuStore()))["routes"]
+    const { routes } = useMenuStore()
     const router = useRouter()
-
     function handleSelect (index, indexPath) {
-      //路由跳转 重置sidebars
+      //路由跳转
       router.push({
         path: routes[index].path
       })
-      getSidebar(routes[index].path)
-
     }
     return {
       routes,

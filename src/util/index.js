@@ -17,7 +17,6 @@ function getSidebar(path) {
       }
     })
   }
-  useMenuStore().$patch({ sidebars: sideBars })
   return sideBars
 }
 

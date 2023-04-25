@@ -1,24 +1,24 @@
 <template>
   <div>
-    <ul v-if="sidebars.length">
+    <ul v-if="sidebarsItems.length">
       <li
-        v-for="(val,index) in sidebars"
+        v-for="(val,index) in sidebarsItems"
         :key="index + 's'"
       >{{val.meta.title}}</li>
     </ul>
-    {{sidebars}}
   </div>
 </template>
 
 <script>
 import useMenuStore from "../../store/index"
+import { reactive } from "vue"
 export default {
 
   setup () {
-    const menu = JSON.parse(JSON.stringify(useMenuStore()))
-    const sidebars = menu.sidebars
+    let { sidebars } = useMenuStore()
+    const sidebarsItems = reactive(sidebars)
     return {
-      sidebars
+      sidebarsItems
     }
   }
 }
