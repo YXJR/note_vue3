@@ -17,14 +17,11 @@
 </template>
 
 <script>
-import useMenuStore from "../../store/index"
 import { useRouter } from "vue-router"
 export default {
-
   setup () {
-
-    const { routes } = useMenuStore()
     const router = useRouter()
+    let { routes } = router.options
     function handleSelect (index, indexPath) {
       //路由跳转
       router.push({

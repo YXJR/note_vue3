@@ -1,8 +1,8 @@
 <template>
   <div>
-    <ul v-if="sidebarsItems.length">
+    <ul v-if="sidebars && sidebars.length">
       <li
-        v-for="(val,index) in sidebarsItems"
+        v-for="(val,index) in sidebars"
         :key="index + 's'"
       >{{val.meta.title}}</li>
     </ul>
@@ -10,17 +10,12 @@
 </template>
 
 <script>
-import useMenuStore from "../../store/index"
-import { reactive } from "vue"
-export default {
 
-  setup () {
-    let { sidebars } = useMenuStore()
-    const sidebarsItems = reactive(sidebars)
-    return {
-      sidebarsItems
-    }
-  }
+
+import { computed } from "vue"
+import { mapState } from "vuex"
+export default {
+  computed: mapState(["sidebars"])
 }
 </script>
 

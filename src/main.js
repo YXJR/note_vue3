@@ -5,11 +5,9 @@ import ElementPlus from "element-plus"
 import "element-plus/dist/index.css"
 
 import "./assets/main.scss"
+import store from "./store/index.js"
 const app = createApp(App)
 
-import { createPinia } from "pinia"
-const pinia = createPinia()
-
-app.use(pinia).use(router).use(ElementPlus)
+app.use(store).use(router).use(ElementPlus)
 
 app.mount("#app")

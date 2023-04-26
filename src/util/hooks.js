@@ -1,10 +1,11 @@
 import { getSidebar } from "../util/index.js"
-import useMenuStore from "../store/index.js"
+import routes from "../router/routes"
+import store from "../store/index.js"
 
 const routerHooks = {
-  set_sidebar: (to, from) => {
-    let sidebars = getSidebar(to.path)
-    useMenuStore().$patch({ sidebars: sidebars })
+  SET_SIDEBAR: (to, from) => {
+    let sidebars = getSidebar(to.path, routes)
+    store.commit("SET_SIDEBARS", sidebars)
   },
 }
 

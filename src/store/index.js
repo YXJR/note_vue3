@@ -1,13 +1,17 @@
-import { defineStore } from "pinia"
-import router from "../router/index"
+import { createStore } from "vuex"
+import { reactive } from "vue"
 
-const routes = router.options.routes // 拿到路由表
-
-const useMenuStore = defineStore("menu", {
-  state: () => ({
-    routes: routes,
-    sidebars: [],
-  }),
+const store = createStore({
+  state() {
+    return {
+      sidebars: reactive([]),
+    }
+  },
+  mutations: {
+    SET_SIDEBARS(state, payload) {
+      state.sidebars = payload
+    },
+  },
 })
 
-export default useMenuStore
+export default store
