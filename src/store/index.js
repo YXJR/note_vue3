@@ -4,7 +4,7 @@ import { reactive } from "vue"
 const store = createStore({
   state() {
     return {
-      sidebars: reactive([]),
+      sidebars: [],
     }
   },
   mutations: {
