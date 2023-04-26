@@ -4,7 +4,7 @@ import { reactive } from "vue"
  * @returns 获取即将跳转的sideBars
  */
 function getSidebar(path, routes) {
-  let sideBars = reactive([])
+  let sideBars
   routes.forEach((element) => {
     if (element.path == path) {
       sideBars = element.children
