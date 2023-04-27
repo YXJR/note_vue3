@@ -23,13 +23,14 @@
 
 
 import { computed } from "vue"
-import { mapState } from "vuex"
+import { mapState, useStore } from "vuex"
 import { useRoute, useRouter } from "vue-router"
 export default {
 
   setup () {
     let route = useRoute()
     let router = useRouter()
+    let store = useStore()
 
     function handleSelect (path) {
       //拼接子路由完整路径
@@ -37,16 +38,13 @@ export default {
       router.push({
         path: toPath
       })
+      store.commit("SET_ISSHOWSIDEBARS", true)
     }
     return {
       handleSelect,
     }
   },
   computed: mapState(["sidebars", "isShowSidebars"]),
-  beforeRouteEnter (to, from, next) {
-    console.log(to)
-  }
-
 }
 </script>
 

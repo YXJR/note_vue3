@@ -13,6 +13,7 @@ const routerHooks = {
   },
   // 是否展示sidebars
   IS_SHOW_SIDEBAR: (to, from) => {
+    console.log()
     let hasChild = getSidebar(to.path) ? true : false
     let flag = !hasChild && to.meta.isFirstLevel
     if (flag) {
