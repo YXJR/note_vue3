@@ -6,12 +6,12 @@
   height: 100vh;
   font-family: PingFang SC, Helvetica Neue, Helvetica, Hiragino Sans GB, Arial, sans-serif, Microsoft YaHei;
   font-size:17px;
-  background-color: aquamarine;
+//   background-color: aquamarine;
 }
 
 .layouts{
     .navs{
-        background-color: #999;
+        background-color: #909399;
         height: 48px;
         line-height: 48px;
     }
@@ -23,13 +23,13 @@
         &-left{
             width:228px;
             height: calc(100vh - 48px);
-            background-color: skyblue;
+            background-color: #DCDFE6;
         }
         &-right{
             width:100%;
             min-height:calc(100vh - 48px);
             padding:4rem;
-            background-color: greenyellow;
+            background-color: #FFFFFF;
         }
     }
 }
