@@ -12,7 +12,6 @@ export default {
 
 <template>
   <div>
-    this is summary
     <RouterView />
   </div>
 </template>

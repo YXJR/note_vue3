@@ -5,7 +5,6 @@
   >
     <el-menu
       :default-active="0"
-      :router="true"
       background-color="#909399"
       text-color="#fff"
       active-text-color="#ffd04b"
@@ -25,16 +24,28 @@
 
 import { computed } from "vue"
 import { mapState } from "vuex"
+import { useRoute, useRouter } from "vue-router"
 export default {
 
   setup () {
-    function handleSelect (index) {
+    let route = useRoute()
+    let router = useRouter()
+
+    function handleSelect (path) {
+      //拼接子路由完整路径
+      let toPath = `${route.fullPath}/${path}`
+      router.push({
+        path: toPath
+      })
     }
     return {
       handleSelect,
     }
   },
   computed: mapState(["sidebars", "isShowSidebars"]),
+  beforeRouteEnter (to, from, next) {
+    console.log(to)
+  }
 
 }
 </script>
