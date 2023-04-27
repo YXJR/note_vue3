@@ -20,13 +20,14 @@
         justify-content: flex-start;
         width:100%;
         min-height:100%;
-        .main-left{
+        &-left{
             width:228px;
             height: calc(100vh - 48px);
             background-color: skyblue;
         }
         &-right{
-            width: calc(100% - 228px);
+            width:100%;
+            min-height:calc(100vh - 48px);
             padding:4rem;
             background-color: greenyellow;
         }

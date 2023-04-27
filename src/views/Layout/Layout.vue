@@ -2,9 +2,10 @@
   <div class="layouts">
     <Nav class="navs" />
     <div class="main">
-      <Sidebar class="main-left" />
       <app-main class="main-right" />
+      <Sidebar class="main-left" />
     </div>
+
   </div>
 </template>
 

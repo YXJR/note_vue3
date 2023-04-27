@@ -1,5 +1,8 @@
 <template>
-  <div class="main-left">
+  <div
+    class="main-left"
+    v-if="sidebars && sidebars.length"
+  >
     <ul>
       <li
         v-for="(val,index) in sidebars"
