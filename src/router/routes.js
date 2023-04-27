@@ -1,28 +1,33 @@
+import store from "../store/index"
 const routes = [
   {
     path: "/",
     component: () => import("../views/Index.vue"),
     meta: {
       title: "首页",
+      isFirstLevel: true,
     },
   },
   {
     path: "/summary",
-    name: "summary",
     component: () => import("../views/Summary.vue"),
     meta: {
       title: "Vue3概述",
+      isFirstLevel: true,
     },
+
     children: [
       {
-        path: "/advantage",
+        path: "advantage",
+        name: "advantage",
         meta: {
           title: "vue3的优势",
         },
         component: () => import("../components/Advantage.vue"),
       },
       {
-        path: "/change",
+        path: "change",
+        name: "change",
         meta: {
           title: "vue3的变化",
         },
@@ -36,15 +41,16 @@ const routes = [
     name: "newfunc",
     meta: {
       title: "Vue3新的功能",
+      isFirstLevel: true,
     },
     component: () => import("../views/NewFunction.vue"),
   },
 
   {
     path: "/compsitionApi",
-    name: "compsitionApi",
     meta: {
       title: "composition API",
+      isFirstLevel: true,
     },
     component: () => import("../views/CompositionApi.vue"),
     children: [

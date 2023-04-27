@@ -1,7 +1,7 @@
 <template>
   <div
     class="main-left"
-    v-if="sidebars && sidebars.length"
+    v-if="isShowSidebars"
   >
     <el-menu
       :default-active="0"
@@ -26,15 +26,16 @@
 import { computed } from "vue"
 import { mapState } from "vuex"
 export default {
+
   setup () {
     function handleSelect (index) {
-      console.log(index);
     }
     return {
-      handleSelect
+      handleSelect,
     }
   },
-  computed: mapState(["sidebars"])
+  computed: mapState(["sidebars", "isShowSidebars"]),
+
 }
 </script>
 
