@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <ul v-if="sidebars && sidebars.length">
+  <div class="main-left">
+    <ul>
       <li
         v-for="(val,index) in sidebars"
         :key="index + 's'"

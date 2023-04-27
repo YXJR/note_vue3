@@ -7,22 +7,6 @@ const routes = [
     },
   },
   {
-    path: "/summary",
-    name: "summary",
-    component: () => import("../views/Summary.vue"),
-    meta: {
-      title: "Vue3概述",
-    },
-    children: [
-      {
-        path: "s",
-        meta: {
-          title: "s",
-        },
-      },
-    ],
-  },
-  {
     path: "/newfunc",
     name: "newfunc",
     meta: {
@@ -48,8 +32,25 @@ const routes = [
     ],
   },
   {
-    path: "/comsitionApi",
-    name: "comsitionApi",
+    path: "/summary",
+    name: "summary",
+    component: () => import("../views/Summary.vue"),
+    meta: {
+      title: "Vue3概述",
+    },
+    children: [
+      {
+        path: "s",
+        meta: {
+          title: "s",
+        },
+      },
+    ],
+  },
+
+  {
+    path: "/compsitionApi",
+    name: "compsitionApi",
     meta: {
       title: "composition API",
     },
