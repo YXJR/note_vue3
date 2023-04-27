@@ -7,31 +7,6 @@ const routes = [
     },
   },
   {
-    path: "/newfunc",
-    name: "newfunc",
-    meta: {
-      title: "Vue3新的变化",
-    },
-    component: () => import("../views/NewFunction.vue"),
-
-    children: [
-      {
-        path: "lifecycle",
-        name: "lifecycle",
-        meta: {
-          title: "lifecycle",
-        },
-      },
-      {
-        path: "refs",
-        name: "refs",
-        meta: {
-          title: "refs",
-        },
-      },
-    ],
-  },
-  {
     path: "/summary",
     name: "summary",
     component: () => import("../views/Summary.vue"),
@@ -40,12 +15,27 @@ const routes = [
     },
     children: [
       {
-        path: "s",
+        path: "advantage",
         meta: {
-          title: "s",
+          title: "vue3的优势",
+        },
+      },
+      {
+        path: "change",
+        meta: {
+          title: "vue3的变化",
         },
       },
     ],
+  },
+
+  {
+    path: "/newfunc",
+    name: "newfunc",
+    meta: {
+      title: "Vue3新的功能",
+    },
+    component: () => import("../views/NewFunction.vue"),
   },
 
   {
@@ -54,10 +44,23 @@ const routes = [
     meta: {
       title: "composition API",
     },
-    // route level code-splitting
-    // this generates a separate chunk (About.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import("../views/CompositionApi.vue"),
+    children: [
+      {
+        path: "lifecycle",
+        name: "lifecycle",
+        meta: {
+          title: "生命周期",
+        },
+      },
+      {
+        path: "refs",
+        name: "refs",
+        meta: {
+          title: "响应式:核心",
+        },
+      },
+    ],
   },
 ]
 export default routes
