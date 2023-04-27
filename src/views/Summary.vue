@@ -1,10 +1,6 @@
-<template>
-  <div>
-    this is summary
-  </div>
-</template>
 
 <script>
+import { RouterView } from "vue-router"
 export default {
   setup () {
 
@@ -13,6 +9,14 @@ export default {
   }
 }
 </script>
+
+<template>
+  <div>
+    this is summary
+    <RouterView />
+  </div>
+</template>
+
 
 <style lang="scss" scoped>
 </style>

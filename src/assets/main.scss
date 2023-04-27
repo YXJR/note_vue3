@@ -1,12 +1,9 @@
 @import './base.css';
 
 #app {
-//   max-width: 1280px;
-//   padding:2rem 0 2rem 0;
   height: 100vh;
   font-family: PingFang SC, Helvetica Neue, Helvetica, Hiragino Sans GB, Arial, sans-serif, Microsoft YaHei;
   font-size:17px;
-//   background-color: aquamarine;
 }
 
 .layouts{
@@ -23,7 +20,7 @@
         &-left{
             width:228px;
             height: calc(100vh - 48px);
-            background-color: #DCDFE6;
+            background-color: #909399;
         }
         &-right{
             width:100%;
@@ -41,21 +38,15 @@ a,
   transition: 0.4s;
 }
 
-/* @media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-} */
 
-/* @media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+ul{
+    list-style: none;
+    li{
+     padding-top: 0.3rem ;
+     cursor: pointer;
+    }
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
-} */
+.el-menu {
+    // border:none !important
+}

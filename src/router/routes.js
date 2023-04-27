@@ -15,16 +15,18 @@ const routes = [
     },
     children: [
       {
-        path: "advantage",
+        path: "/advantage",
         meta: {
           title: "vue3的优势",
         },
+        component: () => import("../components/Advantage.vue"),
       },
       {
-        path: "change",
+        path: "/change",
         meta: {
           title: "vue3的变化",
         },
+        component: () => import("../components/Change.vue"),
       },
     ],
   },

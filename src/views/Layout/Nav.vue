@@ -3,6 +3,7 @@
     :default-active="0"
     class="nav-list"
     mode="horizontal"
+    :router="true"
     background-color="#545c64"
     text-color="#fff"
     active-text-color="#ffd04b"
@@ -11,7 +12,7 @@
     <el-menu-item
       class="nav-list-item"
       v-for="(value,idx) in routes"
-      :index="idx"
+      :index="value.path"
     >{{value.meta.title}}</el-menu-item>
   </el-menu>
 </template>
@@ -24,9 +25,6 @@ export default {
     let { routes } = router.options
     function handleSelect (index, indexPath) {
       //路由跳转
-      router.push({
-        path: routes[index].path
-      })
     }
     return {
       routes,
@@ -39,7 +37,7 @@ export default {
 <style lang="scss" scoped>
 .nav-list {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   padding-right: 120px;
   list-style: none;
   text-align: center;
