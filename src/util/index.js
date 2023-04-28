@@ -12,10 +12,18 @@ function getSidebar(path) {
       sideBars = element.children
     }
   })
-
   return sideBars
 }
 
-function isShowSidebars(isFirstLevel, route) {}
+let showNoPathRoutes = routes.filter((route) => !route.meta.hasChild)
+function isShowSidebars(toPath) {
+  let flags = true
+  showNoPathRoutes.forEach((item) => {
+    if (toPath == item.path) {
+      flags = false
+    }
+  })
+  return flags
+}
 
-export { getSidebar }
+export { getSidebar, isShowSidebars }

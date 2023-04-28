@@ -1,7 +1,7 @@
 <template>
   <div
     class="main-left"
-    v-if="isShowSidebars"
+    v-show="isShowSidebars"
   >
     <el-menu
       :default-active="0"
@@ -22,7 +22,6 @@
 <script>
 
 
-import { computed } from "vue"
 import { mapState, useStore } from "vuex"
 import { useRoute, useRouter } from "vue-router"
 export default {
@@ -34,11 +33,11 @@ export default {
 
     function handleSelect (path) {
       //拼接子路由完整路径
+      console.log(route.path)
       let toPath = `${route.fullPath}/${path}`
       router.push({
         path: toPath
       })
-      store.commit("SET_ISSHOWSIDEBARS", true)
     }
     return {
       handleSelect,

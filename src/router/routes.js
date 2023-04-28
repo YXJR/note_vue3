@@ -1,11 +1,11 @@
 import store from "../store/index"
+//import Layout from "../views/Layout/Layout.vue"
 const routes = [
   {
     path: "/",
     component: () => import("../views/Index.vue"),
     meta: {
       title: "首页",
-      isFirstLevel: true,
     },
   },
   {
@@ -13,9 +13,10 @@ const routes = [
     component: () => import("../views/Summary.vue"),
     meta: {
       title: "Vue3概述",
-      isFirstLevel: true,
+      hasChild: true,
     },
 
+    // redirect: "/summary/advantage",
     children: [
       {
         path: "advantage",
@@ -41,7 +42,6 @@ const routes = [
     name: "newfunc",
     meta: {
       title: "Vue3新的功能",
-      isFirstLevel: true,
     },
     component: () => import("../views/NewFunction.vue"),
   },
@@ -50,7 +50,7 @@ const routes = [
     path: "/compsitionApi",
     meta: {
       title: "composition API",
-      isFirstLevel: true,
+      hasChild: true,
     },
     component: () => import("../views/CompositionApi.vue"),
     children: [

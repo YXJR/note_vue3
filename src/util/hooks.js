@@ -1,4 +1,4 @@
-import { getSidebar } from "../util/index.js"
+import { getSidebar, isShowSidebars } from "../util/index.js"
 import store from "../store/index.js"
 
 const routerHooks = {
@@ -12,15 +12,9 @@ const routerHooks = {
     store.commit("SET_SIDEBARS", sidebars)
   },
   // 是否展示sidebars
-  IS_SHOW_SIDEBAR: (to, from) => {
-    console.log()
-    let hasChild = getSidebar(to.path) ? true : false
-    let flag = !hasChild && to.meta.isFirstLevel
-    if (flag) {
-      store.commit("SET_ISSHOWSIDEBARS", false)
-    } else {
-      store.commit("SET_ISSHOWSIDEBARS", true)
-    }
+  IS_SHOW_SIDEBAR: (to) => {
+    let flag = isShowSidebars(to.path)
+    store.commit("SET_ISSHOWSIDEBARS", flag)
   },
 }
 
