@@ -13,7 +13,7 @@
       <el-menu-item
         class="nav-list-item"
         v-for="(value,idx) in sidebars"
-        :index="value.path"
+        :index="value"
       >{{value.meta.title}}</el-menu-item>
     </el-menu>
   </div>
@@ -31,12 +31,10 @@ export default {
     let router = useRouter()
     let store = useStore()
 
-    function handleSelect (path) {
+    function handleSelect (route) {
       //拼接子路由完整路径
-      console.log(route.path)
-      let toPath = `${route.fullPath}/${path}`
       router.push({
-        path: toPath
+        name: route.name
       })
     }
     return {
