@@ -1,7 +1,7 @@
 <template>
   <div
     class="main-left"
-    v-show="isShowSidebars"
+    v-if="isShowSidebars"
   >
     <el-menu
       :default-active="0"

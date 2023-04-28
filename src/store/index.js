@@ -3,16 +3,19 @@ import { createStore } from "vuex"
 const store = createStore({
   state() {
     return {
-      sidebars: [],
-      isShowSidebars: true,
+      sidebars: JSON.parse(localStorage.getItem("sidebars")) || [],
+      isShowSidebars:
+        JSON.parse(localStorage.getItem("isShowSidebars")) || false,
     }
   },
   mutations: {
     SET_SIDEBARS(state, payload) {
       state.sidebars = payload
+      localStorage.setItem("sidebars", JSON.stringify(payload))
     },
     SET_ISSHOWSIDEBARS(state, payload) {
       state.isShowSidebars = payload
+      localStorage.setItem("isShowSidebars", payload)
     },
   },
 })
