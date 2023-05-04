@@ -4,7 +4,7 @@
     v-if="isShowSidebars"
   >
     <el-menu
-      :default-active="0"
+      default-active="0"
       background-color="#909399"
       text-color="#fff"
       active-text-color="#ffd04b"

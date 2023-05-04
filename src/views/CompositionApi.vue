@@ -1,10 +1,11 @@
 <template>
   <div>
-    this is composition API
+    <RouterView />
   </div>
 </template>
 
 <script>
+import { RouterView } from "vue-router"
 export default {
   setup () {
 

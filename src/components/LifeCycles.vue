@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{msg}}
+    {{msg}} 生命周期
   </div>
 </template>
 

@@ -15,11 +15,9 @@ const routes = [
       title: "Vue3概述",
       hasChild: true,
     },
-
-    // redirect: "/summary/advantage",
     children: [
       {
-        path: "advantage",
+        path: "", //默认显示这个子路由
         name: "advantage",
         meta: {
           title: "vue3的优势",
@@ -38,10 +36,10 @@ const routes = [
   },
 
   {
-    path: "/newfunc",
-    name: "newfunc",
+    path: "/response",
+    name: "response",
     meta: {
-      title: "Vue3新的功能",
+      title: "响应式",
     },
     component: () => import("../views/NewFunction.vue"),
   },
@@ -55,18 +53,21 @@ const routes = [
     component: () => import("../views/CompositionApi.vue"),
     children: [
       {
+        path: "",
+        name: "setup",
+        meta: {
+          title: "setup",
+        },
+        component: () => import("../components/Setup.vue"),
+      },
+      ,
+      {
         path: "lifecycle",
         name: "lifecycle",
         meta: {
           title: "生命周期",
         },
-      },
-      {
-        path: "refs",
-        name: "refs",
-        meta: {
-          title: "响应式:核心",
-        },
+        component: () => import("../components/LifeCycles.vue"),
       },
     ],
   },
