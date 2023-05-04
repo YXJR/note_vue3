@@ -17,7 +17,7 @@ const routes = [
     },
     children: [
       {
-        path: "", //默认显示这个子路由
+        path: "advantage", //默认显示这个子路由
         name: "advantage",
         meta: {
           title: "vue3的优势",
@@ -41,7 +41,7 @@ const routes = [
     meta: {
       title: "响应式",
     },
-    component: () => import("../views/NewFunction.vue"),
+    component: () => import("../views/Response.vue"),
   },
 
   {
@@ -53,14 +53,14 @@ const routes = [
     component: () => import("../views/CompositionApi.vue"),
     children: [
       {
-        path: "",
+        path: "setup",
         name: "setup",
         meta: {
           title: "setup",
         },
         component: () => import("../components/Setup.vue"),
       },
-      ,
+
       {
         path: "lifecycle",
         name: "lifecycle",
