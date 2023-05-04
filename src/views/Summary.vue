@@ -1,7 +1,10 @@
 
 <script>
-import { RouterView } from "vue-router"
+import Advantage from "../components/Advantage.vue"
 export default {
+  components: {
+    Advantage
+  },
   setup () {
     return {}
   }
@@ -10,7 +13,7 @@ export default {
 
 <template>
   <div>
-    <RouterView />
+    <Advantage />
   </div>
 </template>
 

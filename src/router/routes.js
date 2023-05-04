@@ -13,26 +13,7 @@ const routes = [
     component: () => import("../views/Summary.vue"),
     meta: {
       title: "Vue3概述",
-      hasChild: true,
     },
-    children: [
-      {
-        path: "advantage", //默认显示这个子路由
-        name: "advantage",
-        meta: {
-          title: "vue3的优势",
-        },
-        component: () => import("../components/Advantage.vue"),
-      },
-      {
-        path: "change",
-        name: "change",
-        meta: {
-          title: "vue3的变化",
-        },
-        component: () => import("../components/Change.vue"),
-      },
-    ],
   },
 
   {
