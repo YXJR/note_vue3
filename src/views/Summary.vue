@@ -1,9 +1,11 @@
 
 <script>
 import Advantage from "../components/Advantage.vue"
+import Change from "../components/Change.vue"
 export default {
   components: {
-    Advantage
+    Advantage,
+    Change
   },
   setup () {
     return {}
@@ -14,6 +16,8 @@ export default {
 <template>
   <div>
     <Advantage />
+
+    <Change />
   </div>
 </template>
 

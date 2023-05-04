@@ -1,5 +1,5 @@
 @import './base.css';
-
+@import "./variable.scss";
 #app {
   height: 100vh;
   font-family: PingFang SC, Helvetica Neue, Helvetica, Hiragino Sans GB, Arial, sans-serif, Microsoft YaHei;
@@ -34,10 +34,15 @@
 a,
 .green {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
+  color: $color_highlight;
   transition: 0.4s;
 }
+.head_blue{
+    color: $color_head;
+    transition: 0.4s;
+    font-weight: 550;
 
+}
 
 ul{
     list-style: none;
@@ -60,4 +65,7 @@ ul{
 }
 .padding-left-15{
     padding-left:15px;
+}
+.padding-top-15{
+    padding-top:15px;
 }
