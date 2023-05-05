@@ -3,6 +3,7 @@
     <h3 class="title">Vue3 的优势:</h3>
     <ul class="padding-left-15">
       <li
+        class="head_blue"
         v-for="(value,index) in advantages"
         :key="index"
       >{{value}}</li>
