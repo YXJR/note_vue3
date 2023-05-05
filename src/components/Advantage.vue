@@ -22,7 +22,6 @@ export default {
       "更多的新的功能",
       "更好的TS支持"
     ]
-
     return {
       advantages
     }

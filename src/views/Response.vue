@@ -1,10 +1,11 @@
 <template>
   <div>
-    Response.vue
+    <RouterView />
   </div>
 </template>
 
 <script>
+import { RouterView } from "vue-router"
 export default {
   setup () {
 
