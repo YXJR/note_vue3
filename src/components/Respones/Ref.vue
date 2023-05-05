@@ -51,9 +51,9 @@
                               return {
                                 eleRef
                               }
-                            },
-                        </code>
-                    </pre>
+                     },
+             </code>
+          </pre>
         </li>
       </ul>
     </li>
