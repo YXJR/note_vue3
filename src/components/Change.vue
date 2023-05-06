@@ -21,6 +21,24 @@
         </pre>
       </li>
       <li class="head_blue">
+        emits属性使用变更
+        <pre class="shiki material-theme-palenight">
+            <code class="language-js line-numbers" data-prismjs-copy="Copy">
+             //父组件上需要绑定 @onSayHello = " sayHello "
+             //子组件
+             export default {
+                props:{
+                    msg:String
+                },
+                emits:["sayHello"],
+                setup( props, { emits } ){
+                    emits("sayHello","bbb")
+                }
+             }
+            </code>
+        </pre>
+      </li>
+      <li class="head_blue">
         Vue3采用compositionApi进行组织功能,解决了反复横跳,优化复用的逻辑(mixin带来的数据来源不清晰,命名冲突等),相比optionsApi类型推断更加方便;<br />
         组合式API: setup(props,context){ } context暴露出4个可使用的组件对象,attrs,slots,emit,expose；通过组合的方式，把零散在各个data，methods的代码，重新组合，一个功能的代码都放在一起维护，并且这些代码可以单独拆分成函数 。
         <pre class="shiki material-theme-palenight">
@@ -48,8 +66,22 @@
       <li class="head_blue">
         片段:一个根节点下可以包含多个组件
         <pre class="shiki material-theme-palenight">
+            <code class="language-markup line-numbers" data-prismjs-copy="Copy">
+                <template>
+                    <div>组件1</div>
+                    <div>组件2</div>
+                 </template>
+            </code>
+        </pre>
+      </li>
+      <li class="head_blue">
+        异步组件得定义
+        <pre class="shiki material-theme-palenight">
             <code class="language-js line-numbers" data-prismjs-copy="Copy">
-                {{fragment}}
+              import { createApp, defineAsyncComponent } from "vue"
+              createApp({
+                AsyncComponent: defineAsyncComponent( () => import( "./components/AsyncComponent.vue" ) )
+              })
             </code>
         </pre>
       </li>
@@ -230,7 +262,6 @@
           </li>
           <li class="head_blue padding-left-15"> </li>
           <li class="head_blue padding-left-15"> </li>
-
         </ul>
       </li>
     </ul>

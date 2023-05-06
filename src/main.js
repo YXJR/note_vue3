@@ -8,6 +8,7 @@ import "./assets/main.scss"
 import store from "./store/index.js"
 
 import Prism from "prismjs"
+import "prismjs/components/prism-markup.min.js"
 import "prismjs/themes/prism-okaidia.css"
 import "prismjs/plugins/toolbar/prism-toolbar.min.js"
 import "prismjs/plugins/toolbar/prism-toolbar.css"
