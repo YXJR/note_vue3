@@ -8,6 +8,7 @@
         :key="index"
       >{{value}}</li>
     </ul>
+
   </div>
 </template>
 

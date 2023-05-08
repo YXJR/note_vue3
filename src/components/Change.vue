@@ -85,6 +85,25 @@
             </code>
         </pre>
       </li>
+      <li class="head_blue">
+        移除filter
+      </li>
+      <li class="head_blue">
+        新增Teleport组件
+        <pre class="shiki material-theme-palenight">
+            <code class="language-js line-numbers" data-prismjs-copy="Copy">
+             {{teleportFragment}}
+            </code>
+        </pre>
+      </li>
+      <li class="head_blue">
+        新增Suspense组件
+        <pre class="shiki material-theme-palenight">
+            <code class="language-js line-numbers" data-prismjs-copy="Copy">
+             {{teleportFragment}}
+            </code>
+        </pre>
+      </li>
       <li>
         <ul>
           <span class="subTitle head_blue">CSS部分：</span>
@@ -281,6 +300,31 @@ export default {
                     <div>组件1</div>
                     <div>组件2</div>
                  </template>`,
+      teleportFragment: `
+                 <button @click="modalOpen = true">open full screen modal ( with teleport )</button>
+                 <teleport to="body">
+                    <div v-if="modalOpen" class="modal">
+                        <div>
+                            teleport 弹框（父元素是body）   
+                            <button @click="modalOpen = false"> close </button>
+                        </div>
+                    </div>
+                 </teleport>
+        `,
+      suspenseFragment: `
+                
+                 <Suspense>
+
+                    <template>
+                       <Test1 />   <!-- 这是一个异步组件 -->
+                    </template>
+
+                    <!-- #fallback 就是一个具名插槽，即Suspense组件内部，有2个slot，其中一个具名为fallback -->
+                    <template #fallback>
+                        Loading...
+                    </template>
+                 </Suspense>
+        `
 
     }
   },
