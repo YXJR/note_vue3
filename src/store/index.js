@@ -6,8 +6,8 @@ const store = createStore({
       sidebars: JSON.parse(localStorage.getItem("sidebars")) || [],
       isShowSidebars:
         JSON.parse(localStorage.getItem("isShowSidebars")) || false,
-      activeMenu: JSON.parse(localStorage.getItem("activeMenu")) || "0",
-      activeSubMenu: JSON.parse(localStorage.getItem("activeSubMenu")) || "0",
+      activeMenu: localStorage.getItem("activeMenu") || "/",
+      activeSubMenu: localStorage.getItem("activeSubMenu") || "0",
     }
   },
   mutations: {
@@ -20,7 +20,6 @@ const store = createStore({
       localStorage.setItem("isShowSidebars", payload)
     },
     SET_ACTIVEMENU(state, payload) {
-      payload = payload + ""
       state.activeMenu = payload
       localStorage.setItem("activeMenu", payload)
     },

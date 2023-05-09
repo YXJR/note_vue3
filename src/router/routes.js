@@ -19,7 +19,7 @@ const routes = [
 
   {
     path: "/response",
-
+    name: "",
     meta: {
       title: "响应式",
       hasChild: true,
@@ -53,25 +53,6 @@ const routes = [
       // hasChild: true,
     },
     component: () => import("../views/Family.vue"),
-    // children: [
-    //   {
-    //     path: "VueRouter",
-    //     name: "setup",
-    //     meta: {
-    //       title: "setup",
-    //     },
-    //     component: () => import("../components/Setup.vue"),
-    //   },
-
-    //   {
-    //     path: "lifecycle",
-    //     name: "lifecycle",
-    //     meta: {
-    //       title: "生命周期",
-    //     },
-    //     component: () => import("../components/LifeCycles.vue"),
-    //   },
-    // ],
   },
 ]
 export default routes

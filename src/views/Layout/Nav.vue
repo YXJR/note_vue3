@@ -1,6 +1,6 @@
 <template>
   <el-menu
-    default-active="0"
+    :default-active="activeMenu"
     class="nav-list"
     mode="horizontal"
     :router="true"
@@ -13,39 +13,41 @@
       class="nav-list-item"
       v-for="(value,idx) in routes"
       @click="handleClick(idx)"
-      :index="value"
+      :index="value.path"
       :key="idx"
     >{{value.meta.title}}</el-menu-item>
   </el-menu>
 </template>
 
 <script>
-import { getCurrentInstance, ref } from "vue"
+import { computed } from "vue"
 import { useRouter } from "vue-router"
 import { mapState, useStore } from "vuex"
+
 export default {
   setup () {
     const router = useRouter()
     let { routes } = router.options
     const store = useStore()
-    const instance = getCurrentInstance()
+
+    const activeMenu = computed(() => store.state.activeMenu)
 
     function handleClick (index) {
+
+    }
+
+    function handleSelect (index) {
       store.commit("SET_ACTIVEMENU", index)
     }
 
-    function handleSelect (index, indexPath, item) {
-
-    }
     return {
       routes,
       handleSelect,
       handleClick,
+      activeMenu
     }
   },
-  computed: {
-    ...mapState(["activeMenu"])
-  },
+
 }
 </script>
 
