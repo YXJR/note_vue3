@@ -14,6 +14,7 @@
         class="nav-list-item"
         v-for="(value,idx) in sidebars"
         :index="value"
+        :key="idx"
       >{{value.meta.title}}</el-menu-item>
     </el-menu>
   </div>

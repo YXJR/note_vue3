@@ -10,6 +10,7 @@ const routes = [
   },
   {
     path: "/summary",
+    name: "summary",
     component: () => import("../views/Summary.vue"),
     meta: {
       title: "Vue3概述",
@@ -18,7 +19,7 @@ const routes = [
 
   {
     path: "/response",
-    name: "response",
+
     meta: {
       title: "响应式",
       hasChild: true,
@@ -26,7 +27,7 @@ const routes = [
     component: () => import("../views/Response.vue"),
     children: [
       {
-        path: "responseBase",
+        path: "",
         name: "responseBase",
         meta: {
           title: "响应式实现",
