@@ -1,6 +1,7 @@
 <template>
   <div>
-    <RouterView />
+    <!-- <RouterView /> -->
+    Family.vue
   </div>
 </template>
 
@@ -8,8 +9,6 @@
 import { RouterView } from "vue-router"
 export default {
   setup () {
-
-
     return {}
   }
 }

@@ -51,13 +51,6 @@ export default {
 
 <style lang="scss" scoped>
 .nav-list {
-  display: flex;
-  justify-content: flex-start;
-  padding-right: 120px;
-  list-style: none;
-  text-align: center;
-  font-weight: bold;
-  color: #333;
   &-item {
     width: 128px;
   }
