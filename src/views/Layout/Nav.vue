@@ -3,7 +3,6 @@
     :default-active="activeMenu"
     class="nav-list"
     mode="horizontal"
-    :router="true"
     background-color="#545c64"
     text-color="#fff"
     active-text-color="#ffd04b"
@@ -12,7 +11,7 @@
     <el-menu-item
       class="nav-list-item"
       v-for="(value,idx) in routes"
-      @click="handleClick(idx)"
+      @click="handleClick(value.path)"
       :index="value.path"
       :key="idx"
     >{{value.meta.title}}</el-menu-item>
@@ -22,7 +21,7 @@
 <script>
 import { computed } from "vue"
 import { useRouter } from "vue-router"
-import { mapState, useStore } from "vuex"
+import { useStore } from "vuex"
 
 export default {
   setup () {
@@ -32,10 +31,11 @@ export default {
 
     const activeMenu = computed(() => store.state.activeMenu)
 
-    function handleClick (index) {
-
+    function handleClick (path) {
+      router.push({
+        path: path
+      })
     }
-
     function handleSelect (index) {
       store.commit("SET_ACTIVEMENU", index)
     }

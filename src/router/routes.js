@@ -19,15 +19,17 @@ const routes = [
 
   {
     path: "/response",
-    name: "",
+    name: "response",
+
     meta: {
       title: "响应式",
       hasChild: true,
     },
+    redirect: "/response/responseBase",
     component: () => import("../views/Response.vue"),
     children: [
       {
-        path: "",
+        path: "responseBase",
         name: "responseBase",
         meta: {
           title: "响应式实现",
