@@ -16,6 +16,10 @@ const routerHooks = {
     let flag = isShowSidebars(to.path)
     store.commit("SET_ISSHOWSIDEBARS", flag)
   },
+
+  RESET_MENU: (to) => {
+    //store.commit("SET_ACTIVEMENU", to.path)
+  },
 }
 
 export { routerHooks }

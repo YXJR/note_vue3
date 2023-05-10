@@ -34,6 +34,7 @@ export default {
 
     function handleClick (path) {
     }
+
     function handleSelect (index) {
       store.commit("SET_ACTIVEMENU", index)
     }
