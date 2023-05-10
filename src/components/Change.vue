@@ -6,7 +6,19 @@
         Vue3劫持数据采用了proxy,Vue2劫持数据使用的是defineProperty.defineProperty有性能问题和缺陷；
         具体见：响应式
       </li>
-      <li class="head_blue">Vue3中对模板编译进行了优化,编译时生成了Block tree,可以对子节点的动态进行收集.可以减少比较,并采用了patchFlag标记动态节点</li>
+      <li>
+        <ul>
+          <span class="subTitle head_blue"> Vue3中对模板编译进行了优化,编译时生成了Block tree,可以对子节点的动态进行收集.可以减少比较,采用了patchFlag标记动态节点</span>
+          <li class="head_blue padding-left-15">编译模板时，动态节点做标记</li>
+          <li class="head_blue padding-left-15">标记，分为不同得类型，如TEXT PROPS</li>
+          <li class="head_blue padding-left-15">diff算法时，可以区分静态节点，以及不同类型得动态节点</li>
+          <li class="head_blue padding-left-15"> <a
+              href="https://template-explorer.vuejs.org/"
+              target="blank"
+            >前往测试</a> </li>
+        </ul>
+
+      </li>
       <li class="head_blue">
         使用createApp创建一个应用,
         <pre class="shiki material-theme-palenight">
@@ -70,6 +82,12 @@
                       }
                     }
                   }
+                /*
+                *  TIPS:
+                *    setup函数和其他得composition API中没有this
+                *    可以通过getCurrentInstance获取当前实例
+                *    若使用Options API 可照常使用this
+                */
             </code>
         </pre>
       </li>
