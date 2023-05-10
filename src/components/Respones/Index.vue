@@ -52,11 +52,7 @@
   </div>
   <div>
     <div class="title"> Proxy实现响应式：</div>
-    <pre class="shiki material-theme-palenight">
-        <code class="language-js line-numbers" data-prismjs-copy="Copy">
-          
-        </code>
-    </pre>
+    代码：src/components/Response/proxy-observe.js
   </div>
 </template>
 
