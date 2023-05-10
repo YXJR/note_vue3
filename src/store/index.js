@@ -7,7 +7,7 @@ const store = createStore({
       isShowSidebars:
         JSON.parse(localStorage.getItem("isShowSidebars")) || false,
       activeMenu: localStorage.getItem("activeMenu") || "/",
-      activeSubMenu: localStorage.getItem("activeSubMenu") || "/",
+      activeSubMenu: localStorage.getItem("activeSubMenu"),
     }
   },
   mutations: {
@@ -24,7 +24,7 @@ const store = createStore({
       localStorage.setItem("activeMenu", payload)
     },
     SET_ACTIVESUBMENU(state, payload) {
-      state.activeMenu = payload
+      state.activeSubMenu = payload
       localStorage.setItem("activeSubMenu", payload)
     },
   },

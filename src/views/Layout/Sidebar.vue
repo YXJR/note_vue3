@@ -4,8 +4,9 @@
     v-if="isShowSidebars"
   >
     <el-menu
-      :default-active="activeSubMenu"
+      :default-active="activePath"
       background-color="#909399"
+      :router="true"
       text-color="#fff"
       active-text-color="#ffd04b"
       @select="handleSelect"
@@ -14,8 +15,7 @@
       <el-menu-item
         class="nav-list-item"
         v-for="(route,idx) in sidebars"
-        :index="route.path"
-        @click="handleClick(route)"
+        :index="`${route.path}`"
         :key="idx"
       >
         {{route.meta.title}}
@@ -27,40 +27,52 @@
 
 <script>
 
-import { computed } from "vue"
-import { mapState, useStore } from "vuex"
-import { useRouter, useRoute } from "vue-router"
+import { computed, watch, onMounted, ref } from "vue"
+import { useStore } from "vuex"
+import { useRoute } from "vue-router"
 export default {
 
   setup () {
-    let router = useRouter()
     let route = useRoute()
     let store = useStore()
+    let sidebars = computed(() => store.state.sidebars)
+    let isShowSidebars = computed(() => store.state.isShowSidebars)
+    let activePath = ref('')
+    const activeMenu = computed(() => store.state.activeMenu)
     let activeSubMenu = computed(() => store.state.activeSubMenu)
 
-    function handleClick () {
-      store.commit("SET_ACTIVESUBMENU", route.path)
-      console.dir(route.path)
+    function handleSelect (path) {
 
+      store.commit("SET_ACTIVESUBMENU", path)
     }
-    function handleSelect (route) {
-      router.push({
-        name: route.name
-      })
-    }
+
+    onMounted(() => { //fiex-当侧边菜单激活时赋予初始激活项，同时解决刷新时丢失激活项得问题
+      activePath.value = activeSubMenu.value ? activeSubMenu.value : sidebars.value[0].path
+    })
+
+    watch(() => isShowSidebars.value, () => { //当切换导航菜单时，希望再次点击回到有侧边栏选项时，重置激活选项为第一项
+      if (!isShowSidebars.value) {
+        store.commit("SET_ACTIVESUBMENU", sidebars.value[0].path)
+      }
+    })
+
+
+
     return {
-
       handleSelect,
-      handleClick,
-      activeSubMenu
+      sidebars,
+      isShowSidebars,
+      activePath,
     }
   },
-  computed: mapState(["sidebars", "isShowSidebars"]),
+
 }
 </script>
 
 <style lang="scss" >
-.el-menu {
-  border: none !important;
+.main-left {
+  .el-menu {
+    border: none !important;
+  }
 }
 </style>

@@ -20,7 +20,6 @@ const routes = [
   {
     path: "/response",
     name: "response",
-
     meta: {
       title: "响应式",
       hasChild: true,
