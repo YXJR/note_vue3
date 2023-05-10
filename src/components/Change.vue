@@ -2,7 +2,10 @@
   <div class="change">
     <div class="title padding-top-15">vue3的变化:</div>
     <ul class="change-main">
-      <li class="head_blue">Vue3劫持数据采用了proxy,Vue2劫持数据使用的是defineProperty.defineProperty有性能问题和缺陷</li>
+      <li class="head_blue">
+        Vue3劫持数据采用了proxy,Vue2劫持数据使用的是defineProperty.defineProperty有性能问题和缺陷；
+        具体见：响应式
+      </li>
       <li class="head_blue">Vue3中对模板编译进行了优化,编译时生成了Block tree,可以对子节点的动态进行收集.可以减少比较,并采用了patchFlag标记动态节点</li>
       <li class="head_blue">
         使用createApp创建一个应用,
@@ -19,6 +22,10 @@
                 }).mount('#app')
             </code>
         </pre>
+      </li>
+      <li class="head_blue">
+        v-model得使用：代码见 src/components/V-Model
+        <Parent class="padding-15" />
       </li>
       <li class="head_blue">
         emits属性使用变更
@@ -40,7 +47,10 @@
       </li>
       <li class="head_blue">
         Vue3采用compositionApi进行组织功能,解决了反复横跳,优化复用的逻辑(mixin带来的数据来源不清晰,命名冲突等),相比optionsApi类型推断更加方便;<br />
-        组合式API: setup(props,context){ } context暴露出4个可使用的组件对象,attrs,slots,emit,expose；通过组合的方式，把零散在各个data，methods的代码，重新组合，一个功能的代码都放在一起维护，并且这些代码可以单独拆分成函数 。
+        compositionApi最佳实践示例：src/components/BestUse
+      </li>
+      <li class="head_blue">
+        组合式API入口函数: setup(props,context){ } context暴露出4个可使用的组件对象,attrs,slots,emit,expose；通过组合的方式，把零散在各个data，methods的代码，重新组合，一个功能的代码都放在一起维护，并且这些代码可以单独拆分成函数 。
         <pre class="shiki material-theme-palenight">
             <code class="language-js line-numbers" data-prismjs-copy="Copy">
                 export default {
@@ -289,9 +299,11 @@
 
 <script>
 import Code from "../components/Code.vue"
+import Parent from "../components/V-Model/parent.vue"
 export default {
   components: {
     Code,
+    Parent
   },
   setup () {
 
