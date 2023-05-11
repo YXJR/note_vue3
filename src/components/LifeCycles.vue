@@ -29,8 +29,8 @@ export default {
     onBeforeUnmount(() => {
       console.log("onBeforeUnmount")
     })
-    onMounted(() => {
-      console.log("onMounted")
+    onUnmounted(() => {
+      console.log("onUnmounted")
     })
   },
   beforeCreate () {
