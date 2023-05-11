@@ -95,10 +95,7 @@
         片段:一个根节点下可以包含多个组件
         <pre class="shiki material-theme-palenight">
             <code class="language-markup line-numbers" data-prismjs-copy="Copy">
-                <template>
-                    <div>组件1</div>
-                    <div>组件2</div>
-                 </template>
+                {{fragment}}
             </code>
         </pre>
       </li>
@@ -307,8 +304,6 @@
                 </code>
             </pre>
           </li>
-          <li class="head_blue padding-left-15"> </li>
-          <li class="head_blue padding-left-15"> </li>
         </ul>
       </li>
     </ul>
