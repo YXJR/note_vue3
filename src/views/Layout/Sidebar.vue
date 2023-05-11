@@ -46,17 +46,19 @@ export default {
       store.commit("SET_ACTIVESUBMENU", path)
     }
 
-    onMounted(() => { //fiex-当侧边菜单激活时赋予初始激活项，同时解决刷新时丢失激活项得问题
-      activePath.value = activeSubMenu.value ? activeSubMenu.value : sidebars.value[0].path
+    onMounted(() => { //fixed - 当侧边菜单激活时赋予初始激活项，同时解决刷新时丢失激活项得问题
+      let initPath = ""
+      if (sidebars.value && sidebars.value.length) {
+        initPath = activeSubMenu.value
+      }
+      activePath.value = initPath
     })
 
     watch(() => isShowSidebars.value, () => { //当切换导航菜单时，希望再次点击回到有侧边栏选项时，重置激活选项为第一项
-      if (!isShowSidebars.value) {
+      if (isShowSidebars.value) {
         store.commit("SET_ACTIVESUBMENU", sidebars.value[0].path)
       }
     })
-
-
 
     return {
       handleSelect,

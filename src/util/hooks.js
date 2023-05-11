@@ -1,4 +1,4 @@
-import { getSidebar, isShowSidebars } from "../util/index.js"
+import { getSidebar, isShowSidebars, isFirstRoute } from "../util/index.js"
 import store from "../store/index.js"
 
 const routerHooks = {

@@ -15,19 +15,34 @@ function getSidebar(path) {
   return sideBars
 }
 
-let showNoPathRoutes = routes.filter((route) => !route.meta.hasChild)
+let showHasNoChildRoutes = routes.filter((route) => !route.meta.hasChild)
 function isShowSidebars(toPath) {
-  let flags = true
-  showNoPathRoutes.forEach((item) => {
-    if (toPath == item.path) {
-      flags = false
-    }
-  })
+  let flags = false
+  flags = showHasNoChildRoutes.every((item) => toPath !== item.path)
   return flags
 }
 /**
  * 清除缓存
  */
-function resetInfo() {}
+function resetInfo() {
+  localStorage.removeItem("activeMenu")
+  localStorage.removeItem("activeSubMenu")
+  localStorage.removeItem("isShowSidebars")
+  localStorage.removeItem("sidebars")
+}
 
-export { getSidebar, isShowSidebars, resetInfo }
+/**
+ * 检测当前是否是一级路由
+ * @param {当前得路径} path
+ */
+
+function isFirstRoute(path) {
+  if (path.indexof("/") > -1) {
+    //如果大于-1就是一级
+    return true
+  } else {
+    return false
+  }
+}
+
+export { getSidebar, isShowSidebars, resetInfo, isFirstRoute }

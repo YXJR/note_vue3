@@ -21,7 +21,7 @@ import "prismjs/plugins/line-numbers/prism-line-numbers.min.css"
 //import VueMarkdown from "vue-markdown"
 
 const app = createApp(App)
-app.component("Prism", Prism)
+
 app.use(store).use(router).use(ElementPlus)
 
 app.mount("#app")
