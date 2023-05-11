@@ -4,7 +4,7 @@
     v-if="isShowSidebars"
   >
     <el-menu
-      :default-active="activePath"
+      :default-active="activeSubMenu"
       background-color="#909399"
       :router="true"
       text-color="#fff"
@@ -27,7 +27,7 @@
 
 <script>
 
-import { computed, watch, onMounted, ref } from "vue"
+import { computed, watch } from "vue"
 import { useStore } from "vuex"
 import { useRoute } from "vue-router"
 export default {
@@ -37,22 +37,14 @@ export default {
     let store = useStore()
     let sidebars = computed(() => store.state.sidebars)
     let isShowSidebars = computed(() => store.state.isShowSidebars)
-    let activePath = ref('')
-    const activeMenu = computed(() => store.state.activeMenu)
+
     let activeSubMenu = computed(() => store.state.activeSubMenu)
 
-    function handleSelect (path) {
 
+    function handleSelect (path) {
       store.commit("SET_ACTIVESUBMENU", path)
     }
 
-    onMounted(() => { //fixed - 当侧边菜单激活时赋予初始激活项，同时解决刷新时丢失激活项得问题
-      let initPath = ""
-      if (sidebars.value && sidebars.value.length) {
-        initPath = activeSubMenu.value
-      }
-      activePath.value = initPath
-    })
 
     watch(() => isShowSidebars.value, () => { //当切换导航菜单时，希望再次点击回到有侧边栏选项时，重置激活选项为第一项
       if (isShowSidebars.value) {
@@ -64,7 +56,7 @@ export default {
       handleSelect,
       sidebars,
       isShowSidebars,
-      activePath,
+      activeSubMenu,
     }
   },
 

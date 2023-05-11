@@ -9,6 +9,7 @@ const routerHooks = {
     let sidebars = getSidebar(path)
     if (sidebars) {
       store.commit("SET_SIDEBARS", sidebars)
+      store.commit("SET_ACTIVESUBMENU", sidebars[0].path)
     }
   },
   // 是否展示sidebars
