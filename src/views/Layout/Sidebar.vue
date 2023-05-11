@@ -18,7 +18,7 @@
         :index="`${route.path}`"
         :key="idx"
       >
-        {{route.meta.title}}
+        {{route.meta ? route.meta.title : ''}}
       </el-menu-item>
     </el-menu>
   </div>

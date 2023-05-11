@@ -25,5 +25,9 @@ function isShowSidebars(toPath) {
   })
   return flags
 }
+/**
+ * 清除缓存
+ */
+function resetInfo() {}
 
-export { getSidebar, isShowSidebars }
+export { getSidebar, isShowSidebars, resetInfo }

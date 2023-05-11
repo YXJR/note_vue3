@@ -4,8 +4,7 @@ const store = createStore({
   state() {
     return {
       sidebars: JSON.parse(localStorage.getItem("sidebars")) || [],
-      isShowSidebars:
-        JSON.parse(localStorage.getItem("isShowSidebars")) || false,
+      isShowSidebars: localStorage.getItem("isShowSidebars") || false,
       activeMenu: localStorage.getItem("activeMenu") || "/",
       activeSubMenu: localStorage.getItem("activeSubMenu"),
     }

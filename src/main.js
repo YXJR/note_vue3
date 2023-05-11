@@ -3,6 +3,7 @@ import App from "./App.vue"
 import router from "./router"
 import ElementPlus from "element-plus"
 import "element-plus/dist/index.css"
+import Cookies from "js-cookie"
 
 import "./assets/main.scss"
 import store from "./store/index.js"
