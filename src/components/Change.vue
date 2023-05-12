@@ -336,10 +336,8 @@ export default {
                     </div>
                  </teleport>
         `,
-      suspenseFragment: `
-                
+      suspenseFragment: `         
                  <Suspense>
-
                     <template>
                        <Test1 />   <!-- 这是一个异步组件 -->
                     </template>
@@ -350,7 +348,6 @@ export default {
                     </template>
                  </Suspense>
         `
-
     }
   },
   mounted () {
