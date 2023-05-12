@@ -46,14 +46,14 @@ const routes = [
     ],
   },
 
-  {
-    path: "/family",
-    name: "family",
-    meta: {
-      title: "全家桶相关",
-      // hasChild: true,
-    },
-    component: () => import("../views/Family.vue"),
-  },
+  //   {
+  //     path: "/family",
+  //     name: "family",
+  //     meta: {
+  //       title: "全家桶相关",
+  //       // hasChild: true,
+  //     },
+  //     component: () => import("../views/Family.vue"),
+  //   },
 ]
 export default routes
