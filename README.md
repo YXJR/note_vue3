@@ -1,19 +1,17 @@
-# vue-project
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
+## 项目启动
 
 ```sh
-npm run dev
+
+npm install(安装依赖包)
+
+npm run dev(启动服务)
+
 ```
 
-### Compile and Minify for Production
+## 技术栈：
+- vue.js(3) + elementPlus + sass + Vuex + VueRouter
 
-```sh
-npm run build
-```
+## 说明
+- 主要记录vue3的学习笔记
+- 主要实践使用vue3的compositionAPI 
