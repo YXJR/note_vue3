@@ -125,7 +125,7 @@
         新增Suspense组件
         <pre class="shiki material-theme-palenight">
             <code class="language-js line-numbers" data-prismjs-copy="Copy">
-             {{teleportFragment}}
+             {{suspenseFragment}}
             </code>
         </pre>
       </li>
